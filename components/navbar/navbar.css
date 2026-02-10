@@ -1,75 +1,98 @@
 .navbar {
-  position: fixed;
+  position: sticky;
   top: 0;
-  width: 100%;
-  background: #ffffff;
-  z-index: 1000;
-  border-bottom: 1px solid #eee;
+  z-index: 999;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
 }
 
-.navbar .container {
+.container {
   max-width: 1200px;
   margin: auto;
-  padding: 16px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: 0 16px;
 }
 
-/* Logo */
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
 .logo {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #0a2a43;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--primary);
 }
 
 .logo span {
-  color: #c9a24d;
+  color: var(--accent);
 }
 
 /* Links */
 .nav-links {
-  list-style: none;
   display: flex;
-  gap: 28px;
   align-items: center;
+  gap: 32px;
+  list-style: none;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: #333;
   font-weight: 500;
-  position: relative;
-  padding: 4px 0;
-}
-
-/* Hover underline */
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 2px;
-  background: #c9a24d;
+  color: var(--text);
   transition: 0.3s;
 }
 
-.nav-links a:hover::after,
-.nav-links a.active::after {
-  width: 100%;
+.nav-links a:hover {
+  color: var(--primary);
 }
 
-/* Contact Button */
-.btn-nav {
-  padding: 8px 16px;
-  border: 1px solid #c9a24d;
-  border-radius: 6px;
-  color: #c9a24d;
+/* Button */
+.btn {
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: black;
+}
+
+/* Burger */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 26px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 3px;
   transition: 0.3s;
 }
 
-.btn-nav:hover {
-  background: #c9a24d;
-  color: white;
+/* Responsive */
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    inset: 72px 0 0 0;
+    background: var(--bg);
+    flex-direction: column;
+    padding-top: 40px;
+    transform: translateX(100%);
+    transition: 0.35s ease;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
 }
