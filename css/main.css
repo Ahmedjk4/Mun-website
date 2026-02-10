@@ -15,4 +15,6 @@ main {
   padding: 0;
   box-sizing: border-box;
   overflow: hidden;
+  font-family: "Roboto Mono", monospace;
+
 }

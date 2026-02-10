@@ -2,7 +2,8 @@
   position: sticky;
   top: 0;
   z-index: 999;
-  background: var(--bg);
+  height: 100px;
+  background: var(--primary);
   border-bottom: 1px solid var(--border);
 }
 
@@ -16,25 +17,29 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+
 }
 
-.logo {
-  font-size: 22px;
-  font-weight: 800;
-  color: var(--primary);
+.logo img {
+  width: 100px;
+
 }
 
-.logo span {
-  color: var(--accent);
-}
+
 
 /* Links */
 .nav-links {
   display: flex;
   align-items: center;
   gap: 32px;
+  font-size: 20px;
+  font-weight: 700;
   list-style: none;
+  color: #ffff;
+}
+.nav-links a:hover {
+
+  color: var(--accent);
 }
 
 .nav-links a {
@@ -44,21 +49,10 @@
   transition: 0.3s;
 }
 
-.nav-links a:hover {
-  color: var(--primary);
-}
+
 
 /* Button */
-.btn {
-  padding: 10px 22px;
-  border-radius: 999px;
-  font-weight: 600;
-}
 
-.btn-accent {
-  background: var(--accent);
-  color: black;
-}
 
 /* Burger */
 .menu-toggle {
@@ -66,12 +60,13 @@
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
+  background-color: aqua;
 }
 
 .menu-toggle span {
   width: 26px;
   height: 3px;
-  background: var(--primary);
+  background: #ffff;
   border-radius: 3px;
   transition: 0.3s;
 }
@@ -85,11 +80,13 @@
   .nav-links {
     position: fixed;
     inset: 72px 0 0 0;
-    background: var(--bg);
+    background: #25080090;
+    margin-top: 25px;
     flex-direction: column;
     padding-top: 40px;
     transform: translateX(100%);
     transition: 0.35s ease;
+    color: #ffff;
   }
 
   .nav-links.active {
